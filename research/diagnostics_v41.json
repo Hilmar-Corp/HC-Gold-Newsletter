@@ -1,0 +1,53 @@
+{
+  "version": "V4.1.1_GEL",
+  "config": {
+    "start": "2017-08-17",
+    "end": "2026-08-26",
+    "horizons": [
+      1,
+      5,
+      20
+    ],
+    "rolling_window": 252,
+    "rolling_min_obs": 180,
+    "quantiles": 5,
+    "bootstrap_reps": 2000,
+    "bootstrap_block": 20,
+    "random_seed": 42,
+    "winsor_limits": [
+      0.01,
+      0.99
+    ],
+    "min_regression_obs": 250,
+    "etf_break": "2024-01-11",
+    "covid_break": "2020-03-01"
+  },
+  "pearson_btc_gold": 0.11486292382650043,
+  "spearman_btc_gold": 0.10857908000529401,
+  "metadata": {
+    "version": "V4.1.1_GEL",
+    "gold_proxy": "GLD adjusted close via Yahoo Finance",
+    "btc": "BTCUSDT Binance Spot sampled at the exact NYSE Arca session close from the ARCX exchange calendar; no temporal fallback",
+    "currency": "USD",
+    "core_factors": [
+      "equity",
+      "usd",
+      "real_rate"
+    ],
+    "credit_full_sample_proxy": "BAA10Y",
+    "credit_recent_robustness": "BAMLH0A0HYM2",
+    "inflation": "CPIAUCNS mapped to actual BLS CPI release dates; daily state shifted one trading day for strict ex-ante conditioning",
+    "nfci": "EX-POST robustness classification only. Historical FRED NFCI is revisable and is not treated as point-in-time information.",
+    "session_calendar": "exchange_calendars ARCX",
+    "fred_series": {
+      "sp500": "SP500",
+      "real10y": "DFII10",
+      "usd_broad": "DTWEXBGS",
+      "vix": "VIXCLS",
+      "nfci": "NFCI",
+      "baa10y": "BAA10Y",
+      "hy_oas_recent": "BAMLH0A0HYM2",
+      "cpi_nsa": "CPIAUCNS"
+    }
+  }
+}
