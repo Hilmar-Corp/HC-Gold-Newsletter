@@ -1,9 +1,17 @@
 .venv/
 venv/
 __pycache__/
-*.pyc
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
 .DS_Store
-*.zip
 .env
+*.zip
+
+# Network/cache material is not part of the publication snapshot.
 cache/
 **/cache/
+
+# Live reproductions are intentionally not tracked.
+outputs/live_reproduction/
+reproduction/
