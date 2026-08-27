@@ -1,71 +1,24 @@
 {
-  "research": "Is “Digital Gold” a Good Comparison?",
-  "hilmarcorp_research_note": "L’or numérique est-il une bonne comparaison ?",
+  "manifest_version": "2.0",
+  "research": "Bitcoin–Gold Macro-Factor Study",
   "frozen_version": "V4.1.1",
-  "sample_request": {
-    "start": "2017-08-17",
-    "end": "2026-08-26"
+  "controlled_snapshot": {
+    "path": "outputs/digital_gold_v4_1_1",
+    "git_tree_sha": "9b025b4afefbe177222f0249be3a3e8a9345321f"
   },
-  "primary_regression_observations": 2262,
-  "primary_joint_wald": {
-    "chi2": 78.36454955707579,
-    "df": 3,
-    "p": 6.88325332861443e-17
-  },
-  "files": {
-    ".github/workflows/research-ci.yml": "538db173cb3f24a0004d880b260e72b3a60c65ed6e5abbbc6390957aa81d4279",
-    ".gitignore": "723fd768ad980c171a646e7a132925260cf41ddc56353acb636f1d272a4a1638",
-    "DATA_PROVENANCE.md": "2425329d856e39a8fb39adb47fa76423773c53f7f3fb09e7ad1a578d58c60f8d",
-    "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
-    "NOTICE": "9fc1695244091005371273cf07fedfd72f1c7c434d44c51a6f2e74e672ac1c22",
-    "README.md": "3e5edbc134f2fbe04684566d65f3dd6ff1bfe9c6228011c16e37e826671a916e",
-    "REPRODUCIBILITY.md": "61c0ed5ee6b4288f98464fe3eb7cf7851c969c9fd1cdbe22fd80611db05e7775",
-    "RESEARCH_ASSURANCE.md": "f9b0e679f8075f1be9d3a2bee7441d8d9e747002f24f1e8d5176a9bd90e9c4e5",
+  "controlled_files": {
     "newsletter_digital_gold.py": "6e026e4f494585d883e84ae60788b3668de4278c6dce8e000a679e8dda8f5cfd",
-    "outputs/digital_gold_v4_1_1/assurance/btc_arcx_alignment_audit.csv": "74ddce6e7b2fe784c856500916a9b1f29a88713a5b88c8ad02587e2b6cd2d709",
-    "outputs/digital_gold_v4_1_1/assurance/btc_missing_sessions.csv": "de0aa253009cbdbd1d39ee9d64acd5d65010b55c3a1284d7271af6ad35fd7f52",
-    "outputs/digital_gold_v4_1_1/assurance/coverage_manifest.csv": "5ff63ba4464f88005cf4a4391454aa71bc9c30fc5c8d35a6dcee99eb83940835",
-    "outputs/digital_gold_v4_1_1/assurance/data_metadata.json": "f48567940ade6617c9aa84fa1b6b845c6788731c09fe9db0acc8453e8369053c",
-    "outputs/digital_gold_v4_1_1/assurance/diagnostics_v41.json": "0398ccb6bd0f543c69f5acb7cd541e98a79c1c147f5d21b0e4afd098de9a5f66",
-    "outputs/digital_gold_v4_1_1/assurance/validation_v41.json": "2d0503a66cc2df949daa2440fae96fdb61909ab3dd1e63c40af9d4181bf296a6",
-    "outputs/digital_gold_v4_1_1/data/cpi_release_calendar.csv": "16f77f8f6a11cfa573a3e53de47f8f0fdefeed0f68a45096134ed129d5f2559f",
-    "outputs/digital_gold_v4_1_1/data/daily_panel.csv": "a7816e07dbb7d50cf7a2d692a2c3d8e511d4a45914bbbaa8f772b6d2296c0594",
-    "outputs/digital_gold_v4_1_1/figures/01_normalized_paths_v4.png": "1c2893d45422805827118e6622eab6c58994fd442e5d5470d3cad1a2143c68ac",
-    "outputs/digital_gold_v4_1_1/figures/02_rolling_corr_90d_v4.png": "e3fff675f84c1a3b073053069c42d3928f52b76101654069fb70d3513e7e46dd",
-    "outputs/digital_gold_v4_1_1/figures/03_economic_shock_differences_v4.png": "d3d1f038d2562d543baecf859349531c38871412e07863cd7c3b4dfe349b4e8e",
-    "outputs/digital_gold_v4_1_1/figures/conditional_credit_baa_v4.png": "71dfa59d8fd3208a59ce4b274bc37de295592e63edc99211df9650aa9c73ce21",
-    "outputs/digital_gold_v4_1_1/figures/conditional_equity_v4.png": "9962aaa9df889e6ad40628dd41990469fef7a4d861588c8b69c8214bef255b55",
-    "outputs/digital_gold_v4_1_1/figures/conditional_liquidity_stress_ex_post_v4.png": "502f94185728f7d46d7605bd36471b6466f16d55ac70492722596981bd09dd1f",
-    "outputs/digital_gold_v4_1_1/figures/conditional_real_rate_v4.png": "e0e7d1629569b7be6f024f2b03f8d7d10d221d14426f8fec96fe9cfeea93f0b4",
-    "outputs/digital_gold_v4_1_1/figures/conditional_risk_aversion_v4.png": "830c17023eeb298b7ed4a6f6f859a7d0140c8c5a7c0494d71a35f096b1bdbf9e",
-    "outputs/digital_gold_v4_1_1/figures/conditional_usd_v4.png": "e0cf9d3e4925a2f8706fcc856abb7cee785e7efff7c961a94f595978aa0c5df7",
-    "outputs/digital_gold_v4_1_1/figures/rolling_beta_credit_baa_v4.png": "db78e17d5db2b7682ea882a47f682327b92055d42dc30a53ea3a925bb84db25b",
-    "outputs/digital_gold_v4_1_1/figures/rolling_beta_equity_v4.png": "70d49b957245d7c10a23484333e1a4ec12b77be647ab16d965b7ebc465e3a522",
-    "outputs/digital_gold_v4_1_1/figures/rolling_beta_real_rate_v4.png": "b6c3984fd772f437ad3fef5e0866ca9a7e4dffab078a1ec5c9146e3a2eff1ecd",
-    "outputs/digital_gold_v4_1_1/figures/rolling_beta_risk_aversion_v4.png": "5bcbdf2e24636eeb5b566a91d0f9ff17b6c0ded3c298ab961ec1098e01b05531",
-    "outputs/digital_gold_v4_1_1/figures/rolling_beta_usd_v4.png": "7561782b9ec7095fb163ac76e78d08baacaa15fe4c2a05b4e112b6ae631f0546",
-    "outputs/digital_gold_v4_1_1/report/CERTIFICATION_REPORT.md": "d8e851b025c4097a3c7ebf2baf78a91f158c88315192f4c94b4476f1953e612d",
-    "outputs/digital_gold_v4_1_1/tables/conditional_quantiles_v4.csv": "b7e5017794cd2e2b35dab56246b2111b4d635bb73a58772a425583ea18c247c7",
-    "outputs/digital_gold_v4_1_1/tables/correlation_pearson_v4.csv": "39c05d3b3c0164bae73e17720597003b9503142a93f7b258658a919d7256afaa",
-    "outputs/digital_gold_v4_1_1/tables/correlation_spearman_v4.csv": "6247d0a842808bec55d615437aa888c106f989f7d22f291212bc0f4021e6ea33",
-    "outputs/digital_gold_v4_1_1/tables/credit_regressions_isolated.csv": "58fb4c32aa0930bf1da85c0abfe33557e0e07d0051c0928dc1dd3a093df1286f",
-    "outputs/digital_gold_v4_1_1/tables/factor_regressions_v41.csv": "cd32d591c371824f92facc1d1e0b5e6e710cfc57fbaf835a20b199e4af53f356",
-    "outputs/digital_gold_v4_1_1/tables/inflation_event_study.csv": "eb75c54bd16d9eb70f7ece34fcdc9c20ce9382d94d1a0eee65711134ab2da643",
-    "outputs/digital_gold_v4_1_1/tables/inflation_state_summary.csv": "133612f830a0afb5c2522df891d2dbc9c03c1e20374e434016ba46a94cfae759",
-    "outputs/digital_gold_v4_1_1/tables/robustness_leave_one_year_out_v4.csv": "caf2f464d6d2dac5cd9bc037bd3cf56fe380a0636262854084781f54335ffa58",
-    "outputs/digital_gold_v4_1_1/tables/rolling_betas_v4.csv": "e993e96d0ae283c7760d8ef13568659a5dc665e9842afaa94d57cc5ab3e167e4",
-    "outputs/digital_gold_v4_1_1/tables/tail_episode_details_v41.csv": "a8a85ac95bf58284066e7f8bdec0af75fe21a6a6c6012cc0daf4835e0e273084",
-    "outputs/digital_gold_v4_1_1/tables/tail_episode_summary_v41.csv": "ebf6ebc04217612ae90f9cfa1e4461bd0e251871ed66aea99e62347e92316c40",
-    "outputs/digital_gold_v4_1_1/tables/tail_window_diagnostics_v41.csv": "3f772b57b0a506f5a491b127bed55e5b5da8f10b3a3ec02b0165b8632bca440b",
-    "outputs/digital_gold_v4_1_1/tables/wald_joint_tests_v41.csv": "c3a3e0bb6bf6d99032bb906240bd751e231243a36a41560b00af2197ce0f5c78",
-    "pyproject.toml": "5cd1e70901b26c6616ec88630a5de1b88f76ad2d5eccb678e3c47f4ecba10c98",
-    "requirements-dev.txt": "412bdb9b3a741aac353e1d9f6c602e9430ec1cd55f2d147ca342cb03ed458d67",
-    "requirements.txt": "a74e2b6d764dd60f491de365adc0b5492b884f115840ca333718ae0a5933a55a",
-    "scripts/__init__.py": "f7465397bc4d334bcb0d473a6343ffd98bf206aed4fd5710a5a59d6fea396502",
-    "scripts/build_publication_manifest.py": "b9aeda394843f1106a0ccbf72042d532626af9f957e082777c2fce836654a229",
-    "scripts/reproduce_live.sh": "ce9604d6dbf2b22193d512c5ac9dff7cf841a8fa1e1ddd9173dca13aa63ed185",
-    "scripts/run_research_assurance.sh": "fd5aa95a7808902612502875790a9762fd0d5beb18ee196d2977e2133dce79cd",
-    "scripts/verify_research_snapshot.py": "98c3fa54eed00a6d47cb00a4549113c61dd238cef48e021615c9606a10368a47",
-    "tests/test_research_assurance.py": "dc09dc3ca01d5c926041861a6ff1d95802cc3c26d80c7212f4e200ed4f144211"
+    "research_contract.json": "61d4a44684a0f7fbcc5536128676f5646f592090f704883fc2f4af163a9b4ba4",
+    "source_registry.json": "3651fa4f292de3702d05f78ea42fab9813b5ac725f6b1e50cd9b70ad3f95fa19",
+    "config/research_spec.json": "17b867d06b2daed23448b56e2146c71bd01b192db052ea9763aa1c94f79a6789",
+    "evidence/research_assurance_snapshot.json": "b965496bb186ded85114840ad10b1eca138910f6e42d140fb91cf308e845f861"
+  },
+  "reference_results": {
+    "primary_regression_observations": 2262,
+    "primary_joint_wald": {
+      "chi2": 78.36454955707579,
+      "df": 3,
+      "p": 6.88325332861443e-17
+    }
   }
 }

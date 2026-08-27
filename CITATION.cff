@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this research package, please cite it as below."
+title: "Bitcoin–Gold Macro-Factor Study"
+type: software
+authors:
+  - name: "HilmarCorp Research"
+version: "V4.1.1"
+date-released: 2026-08-27
+repository-code: "https://github.com/Hilmar-Corp/HC-Gold-Newsletter"
+license: Apache-2.0
+abstract: >-
+  Reproducible empirical research package comparing Bitcoin and gold across
+  macro-financial factors, stress environments and allocation-relevant risk states.

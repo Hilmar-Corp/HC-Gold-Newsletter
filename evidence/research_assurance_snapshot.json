@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "research_id": "hc-bitcoin-gold-macro-factor",
+  "frozen_version": "V4.1.1",
+  "publication_decision": "PASS_V4_1_1_GEL",
+  "frozen_output_git_tree_sha": "9b025b4afefbe177222f0249be3a3e8a9345321f",
+  "key_controls": {
+    "index_unique": true,
+    "index_monotonic": true,
+    "arcx_calendar_session_coverage": 1.0,
+    "arcx_early_close_sessions": 19,
+    "arcx_early_close_exact_btc_matches": 19,
+    "btc_missing_sessions": [
+      "2017-09-06",
+      "2018-02-08"
+    ],
+    "core_sample_coverage_ratio": 1.0,
+    "primary_regression_n": 2262,
+    "primary_joint_wald": {
+      "chi2": 78.36454955707579,
+      "df": 3,
+      "p": 6.88325332861443e-17
+    },
+    "cpi_release_count": 115,
+    "nfci_explicitly_ex_post": true,
+    "tail_selected_windows_non_overlapping": true,
+    "minimum_tail_episode_count": 5
+  },
+  "interpretation": "Internal automated research assurance. Not an external audit or investment-performance certification."
+}

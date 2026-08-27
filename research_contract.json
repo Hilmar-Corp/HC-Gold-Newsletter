@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "research_id": "hc-bitcoin-gold-macro-factor",
+  "frozen_version": "V4.1.1",
+  "research_question": "Do Bitcoin and gold exhibit sufficiently similar sensitivities to major macro-financial risks for the digital-gold analogy to be informative from an asset-allocation perspective?",
+  "primary_hypothesis": {
+    "null": "delta_beta_equity = delta_beta_usd = delta_beta_real_rate = 0",
+    "test": "joint Wald chi-square",
+    "reference_result": {
+      "chi2": 78.36454955707579,
+      "df": 3,
+      "p": 6.88325332861443e-17
+    }
+  },
+  "canonical_factor_set": [
+    "equity",
+    "usd",
+    "real_rate"
+  ],
+  "forbidden_primary_inputs": [
+    "risk_aversion",
+    "risk_aversion_orth",
+    "credit_baa",
+    "hy_oas_recent_change",
+    "nfci_ex_post",
+    "liquidity_stress_ex_post",
+    "inflation_yoy_available",
+    "inflation_acceleration_available"
+  ],
+  "temporal_contracts": [
+    "Bitcoin is sampled at the exact NYSE Arca close for each GLD session.",
+    "No temporal fallback is permitted for missing exact-close Bitcoin observations in the frozen specification.",
+    "CPI state used for daily conditioning must be available by the preceding traditional-market close.",
+    "NFCI is never represented as point-in-time information."
+  ],
+  "publication_contracts": [
+    "Primary-sample coverage must remain at or above 97 percent of valid asset-return observations.",
+    "Recent-only HY OAS data may not reduce the primary sample.",
+    "Publication-level stress windows must be non-overlapping.",
+    "The frozen publication state must pass the V4.1.1 validation layer.",
+    "Controlled publication artifacts must match the publication manifest."
+  ],
+  "non_claims": [
+    "No causal identification of macro-factor effects.",
+    "No return forecast or predictive-power claim.",
+    "No optimal-allocation estimate.",
+    "No trading-profitability claim.",
+    "No universal statement for all Bitcoin venues or all gold instruments.",
+    "No inflation-surprise claim without a market-consensus series.",
+    "No external audit, regulatory certification or asset-manager endorsement."
+  ]
+}

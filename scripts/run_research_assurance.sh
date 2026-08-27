@@ -3,14 +3,18 @@
 
 set -euo pipefail
 
-python -m py_compile     newsletter_digital_gold.py     scripts/verify_research_snapshot.py     scripts/build_publication_manifest.py
+python -m py_compile $(cat config/canonical_scripts.txt)
 
-python -m ruff check     newsletter_digital_gold.py     scripts     tests
+python -m ruff check \
+    $(cat config/canonical_scripts.txt) \
+    tests \
+    tests_public \
+    scripts
 
-python -m pytest -q
+python -m pytest -q tests tests_public
 
 python scripts/verify_research_snapshot.py
-
-python scripts/build_publication_manifest.py     --verify
+python scripts/research/verify_repository.py
+python scripts/build_publication_manifest.py --verify
 
 echo "RESEARCH_ASSURANCE_PASS"

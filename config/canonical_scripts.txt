@@ -1,0 +1,4 @@
+newsletter_digital_gold.py
+scripts/verify_research_snapshot.py
+scripts/build_publication_manifest.py
+scripts/research/verify_repository.py

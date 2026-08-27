@@ -528,6 +528,28 @@ python scripts/build_publication_manifest.py --verify
 
 ---
 
+## Due-diligence review map
+
+The machine-readable review layer is intentionally separate from the editorial README.
+
+A quantitative or model-governance reviewer should begin with:
+
+    docs/DUE_DILIGENCE.md
+    research_contract.json
+    config/research_spec.json
+    source_registry.json
+    evidence/research_assurance_snapshot.json
+
+The canonical executable scope is registered in:
+
+    config/canonical_scripts.txt
+
+The controlled frozen publication identity is recorded in:
+
+    PUBLICATION_MANIFEST.json
+
+---
+
 ## Repository structure
 
 ```text
@@ -535,6 +557,13 @@ python scripts/build_publication_manifest.py --verify
 ├── .github/
 │   └── workflows/
 │       └── research-ci.yml
+├── config/
+│   ├── canonical_scripts.txt
+│   └── research_spec.json
+├── docs/
+│   └── DUE_DILIGENCE.md
+├── evidence/
+│   └── research_assurance_snapshot.json
 ├── outputs/
 │   └── digital_gold_v4_1_1/
 │       ├── assurance/
@@ -543,19 +572,28 @@ python scripts/build_publication_manifest.py --verify
 │       ├── report/
 │       └── tables/
 ├── scripts/
+│   ├── research/
+│   │   └── verify_repository.py
 │   ├── build_publication_manifest.py
 │   ├── reproduce_live.sh
 │   ├── run_research_assurance.sh
 │   └── verify_research_snapshot.py
 ├── tests/
 │   └── test_research_assurance.py
+├── tests_public/
+│   └── test_repository_contract.py
+├── CITATION.cff
+├── DATA_NOTICE.md
 ├── DATA_PROVENANCE.md
 ├── LICENSE
+├── Makefile
 ├── NOTICE
 ├── PUBLICATION_MANIFEST.json
 ├── README.md
 ├── REPRODUCIBILITY.md
 ├── RESEARCH_ASSURANCE.md
+├── research_contract.json
+├── source_registry.json
 ├── newsletter_digital_gold.py
 ├── pyproject.toml
 ├── requirements-dev.txt
@@ -589,19 +627,13 @@ python -m pip install \
 Compile the controlled Python scope:
 
 ```bash
-python -m py_compile \
-    newsletter_digital_gold.py \
-    scripts/verify_research_snapshot.py \
-    scripts/build_publication_manifest.py
+make compile
 ```
 
 Run static checks:
 
 ```bash
-python -m ruff check \
-    newsletter_digital_gold.py \
-    scripts \
-    tests
+make lint
 ```
 
 ---
@@ -611,10 +643,10 @@ python -m ruff check \
 Run:
 
 ```bash
-python -m pytest -q
+make test
 ```
 
-The deterministic test suite verifies the frozen research contracts and publication-level control values.
+The deterministic public and frozen-snapshot suites verify the empirical publication contracts, machine-readable research specification, source-role separation and repository-governance controls.
 
 ---
 

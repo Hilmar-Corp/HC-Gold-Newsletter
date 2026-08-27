@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0",
+  "research_id": "hc-bitcoin-gold-macro-factor",
+  "frozen_version": "V4.1.1",
+  "status": "frozen",
+  "requested_period": {
+    "start": "2017-08-17",
+    "end": "2026-08-26"
+  },
+  "observed_traditional_market_end": "2026-08-25",
+  "assets": {
+    "bitcoin": {
+      "instrument": "BTCUSDT",
+      "venue": "Binance Spot",
+      "source_frequency": "1h",
+      "valuation_rule": "exact ARCX session close"
+    },
+    "gold": {
+      "instrument": "GLD",
+      "venue": "NYSE Arca",
+      "price_field": "adjusted close",
+      "source": "Yahoo Finance chart endpoint"
+    }
+  },
+  "calendar": {
+    "name": "ARCX",
+    "package": "exchange_calendars",
+    "early_closes_enforced": true
+  },
+  "primary_model": {
+    "dependent_assets": [
+      "bitcoin",
+      "gold"
+    ],
+    "factors": [
+      "equity",
+      "usd",
+      "real_rate"
+    ],
+    "series": {
+      "equity": "SP500",
+      "usd": "DTWEXBGS",
+      "real_rate": "DFII10"
+    },
+    "horizons_sessions": [
+      1,
+      5,
+      20
+    ],
+    "estimator": "OLS",
+    "covariance": "HAC/Newey-West",
+    "maxlags_rule": "max(5, horizon - 1)",
+    "direct_cross_asset_test": "regress BTC-minus-gold return on the same factor set",
+    "joint_test": "Wald chi-square on all delta-beta coefficients"
+  },
+  "robustness": {
+    "winsor_limits": [
+      0.01,
+      0.99
+    ],
+    "leave_one_year_out": true,
+    "rolling_window_sessions": 252,
+    "rolling_min_observations": 180,
+    "subsamples": {
+      "covid_break": "2020-03-01",
+      "spot_etf_break": "2024-01-11"
+    },
+    "credit_long_history": "BAA10Y",
+    "credit_recent_only": "BAMLH0A0HYM2",
+    "nfci_role": "ex-post revised robustness classification only"
+  },
+  "inflation": {
+    "series": "CPIAUCNS",
+    "release_calendar": "US Bureau of Labor Statistics historical CPI schedules",
+    "daily_state": "shifted one traditional-market session for ex-ante conditioning",
+    "consensus_series": null,
+    "inflation_surprise_claim_permitted": false
+  },
+  "stress_episode_design": {
+    "raw_overlapping_windows_retained_as_diagnostics": true,
+    "publication_level_windows_non_overlapping": true,
+    "episode_anchor": "most extreme factor observation inside each merged episode"
+  },
+  "frozen_counts": {
+    "synchronized_price_observations": 2265,
+    "asset_return_observations": 2262,
+    "primary_regression_observations": 2262,
+    "arcx_early_close_sessions": 19,
+    "exact_early_close_btc_matches": 19,
+    "missing_btc_sessions": 2,
+    "cpi_release_count": 115
+  }
+}

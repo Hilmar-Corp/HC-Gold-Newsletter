@@ -1,0 +1,144 @@
+{
+  "schema_version": "1.0",
+  "research_id": "hc-bitcoin-gold-macro-factor",
+  "sources": [
+    {
+      "id": "binance_btcusdt",
+      "provider": "Binance",
+      "object": "BTCUSDT Spot klines",
+      "frequency": "1h",
+      "role": "primary Bitcoin price source",
+      "point_in_time_interpretation": true,
+      "redistributed_raw": false,
+      "known_limitations": [
+        "two frozen GLD sessions have no exact matching hourly observation"
+      ]
+    },
+    {
+      "id": "yahoo_gld",
+      "provider": "Yahoo Finance",
+      "object": "GLD daily adjusted prices",
+      "frequency": "1d",
+      "role": "gold proxy",
+      "point_in_time_interpretation": true,
+      "redistributed_raw": false,
+      "known_limitations": [
+        "GLD is an ETF proxy and not physical spot-gold fixing",
+        "adjusted-price history may be revised upstream"
+      ]
+    },
+    {
+      "id": "fred_sp500",
+      "provider": "Federal Reserve Bank of St. Louis FRED",
+      "series": "SP500",
+      "role": "primary equity factor",
+      "point_in_time_interpretation": false,
+      "redistributed_raw": false,
+      "known_limitations": [
+        "historical provider series are consumed ex post for empirical analysis"
+      ]
+    },
+    {
+      "id": "fred_dfii10",
+      "provider": "FRED",
+      "series": "DFII10",
+      "role": "primary real-rate factor",
+      "point_in_time_interpretation": false,
+      "redistributed_raw": false,
+      "known_limitations": [
+        "historical provider series are consumed ex post for empirical analysis"
+      ]
+    },
+    {
+      "id": "fred_dtwexbgs",
+      "provider": "FRED",
+      "series": "DTWEXBGS",
+      "role": "primary broad-dollar factor",
+      "point_in_time_interpretation": false,
+      "redistributed_raw": false,
+      "known_limitations": [
+        "historical provider series are consumed ex post for empirical analysis"
+      ]
+    },
+    {
+      "id": "fred_vix",
+      "provider": "FRED",
+      "series": "VIXCLS",
+      "role": "risk-aversion extension and stress classification",
+      "point_in_time_interpretation": false,
+      "redistributed_raw": false,
+      "known_limitations": [
+        "not included raw in the canonical three-factor model"
+      ]
+    },
+    {
+      "id": "fred_baa10y",
+      "provider": "FRED",
+      "series": "BAA10Y",
+      "role": "long-history credit-stress proxy",
+      "point_in_time_interpretation": false,
+      "redistributed_raw": false,
+      "known_limitations": [
+        "credit analysis is isolated from the primary factor model"
+      ]
+    },
+    {
+      "id": "fred_hy_oas",
+      "provider": "FRED",
+      "series": "BAMLH0A0HYM2",
+      "role": "recent-window credit robustness",
+      "point_in_time_interpretation": false,
+      "redistributed_raw": false,
+      "known_limitations": [
+        "available historical window is shorter than the primary sample",
+        "cannot enter the primary model"
+      ]
+    },
+    {
+      "id": "fred_nfci",
+      "provider": "FRED / Federal Reserve Bank of Chicago",
+      "series": "NFCI",
+      "role": "ex-post revised financial-condition classification",
+      "point_in_time_interpretation": false,
+      "redistributed_raw": false,
+      "known_limitations": [
+        "historical values are revisable",
+        "observation date is not treated as original market-availability date",
+        "excluded from primary model"
+      ]
+    },
+    {
+      "id": "fred_cpi",
+      "provider": "FRED",
+      "series": "CPIAUCNS",
+      "role": "CPI level used with explicit release chronology",
+      "point_in_time_interpretation": false,
+      "redistributed_raw": false,
+      "known_limitations": [
+        "monthly macro series is not treated as a daily shock"
+      ]
+    },
+    {
+      "id": "bls_cpi_calendar",
+      "provider": "US Bureau of Labor Statistics",
+      "object": "historical CPI release schedules",
+      "role": "CPI publication chronology",
+      "point_in_time_interpretation": true,
+      "redistributed_raw": false,
+      "known_limitations": [
+        "web-page structure can change over time"
+      ]
+    },
+    {
+      "id": "arcx_calendar",
+      "provider": "exchange_calendars",
+      "object": "ARCX session calendar",
+      "role": "traditional-market session synchronization",
+      "point_in_time_interpretation": true,
+      "redistributed_raw": false,
+      "known_limitations": [
+        "package calendar definitions can change across releases"
+      ]
+    }
+  ]
+}
